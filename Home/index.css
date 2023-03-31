@@ -11,6 +11,8 @@ body {
     right: 0px;
     bottom: 0px;
     left: -250px;
+    border: 2px black;
+    transition: 0.5s;
 }
 
 nav {
