@@ -1,0 +1,28 @@
+body {
+    background-color: white;
+    font: "Noto Serif";
+}
+
+#sidebar-elements {
+    position: fixed;
+    background-color: orange;
+    width: 250px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: -250px;
+}
+
+nav {
+    display: grid;
+}
+
+.nav-element {
+    font-size: 20px;
+    padding: 20px 10px 20px 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
