@@ -1,30 +1,72 @@
 body {
-    background-color: white;
-    font: "Noto Serif";
+    background-color: rgba(20,20,20,1);
+    margin: 0px;
 }
 
-#sidebar-elements {
-    position: fixed;
-    background-color: orange;
-    width: 250px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: -250px;
-    border: 2px black;
-    transition: 0.5s;
+#menu {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-nav {
-    display: grid;
-}
+.menu-item {
+    color: white;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-family: "Noto Serif", serif;
 
-.nav-element {
-    font-size: 20px;
-    padding: 20px 10px 20px 10px;
-}
-
-a:link {
+    display: block;
     text-decoration: none;
-    color: black;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+
+    transition: 500ms;
+}
+
+#menu-items {
+    margin-left: clamp(4rem, 10vw, 24rem);
+    position: relative;
+    z-index: 2;
+}
+
+#menu-items:hover  .menu-item {
+    opacity: 0.3;
+}
+
+#menu-items:hover  .menu-item:hover {
+    opacity: 1;
+}
+
+#menu-background-pattern {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.1) 9%, 
+        transparent 9%
+    );
+
+    background-position: 0px 0px;
+    background-size: 12vmin 12vmin;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    transition: opacity 800ms, background-size 800ms, background-position 800ms;
+}
+
+#menu-items:hover ~ #menu-background-pattern {
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+}
+
+#menu[data-active-index="0"] #menu-background-pattern {
+    background-position: 0px -200px;
+}
+
+#menu[data-active-index="1"] #menu-background-pattern {
+    background-position: 0px -300px;
+}
+
+#menu[data-active-index="2"] #menu-background-pattern {
+    background-position: 0px -400px;
 }
